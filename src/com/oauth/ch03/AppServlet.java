@@ -17,12 +17,14 @@ public class AppServlet extends HttpServlet {
 
 
     String oauthURl="http://localhost:8081/OauthServlet-ch03";
+    String protectedURl="http://localhost:8081/ProtectedServlet-ch03";
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
 
 
         //授权码许可流程，DEMO CODE
@@ -40,6 +42,15 @@ public class AppServlet extends HttpServlet {
 
         System.out.println("accessToken:"+accessToken);
 
+        //使用 accessToken 请求受保护资源服务
+
+        Map<String, String> paramsMap = new HashMap<String, String>();
+
+        paramsMap.put("app_id","APPID_RABBIT");
+        paramsMap.put("app_secret","APPSECRET_RABBIT");
+        paramsMap.put("token",accessToken);
+
+        String result = HttpURLClient.doPost(protectedURl,HttpURLClient.mapToStr(paramsMap));
 
 
     }

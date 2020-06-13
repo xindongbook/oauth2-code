@@ -20,7 +20,7 @@ public class JWTTest {
 
 
 
-    static String publicKey = "QgkAQIDAQAB";
+    /*static String publicKey = "QgkAQIDAQAB";
     static String privateKey = "hellooauth";
 
 
@@ -55,14 +55,13 @@ public class JWTTest {
         }
 
         return null;
-    }
+    }*/
 
 
     public static void main(String[] args) {
         String sharedTokenSecret="hellooauthhellooauthhellooauthhellooauth";
         Key key = new SecretKeySpec(sharedTokenSecret.getBytes(),
                 SignatureAlgorithm.HS256.getJcaName());
-
 
         Map<String, Object> headerMap = new HashMap<>();
         headerMap.put("typ", "JWT");
@@ -77,28 +76,20 @@ public class JWTTest {
 
         System.out.println("jws2:" + jws2);
 
-
-
         /*String sharedTokenSecret2="hellooauthhellooauthhellooauthhellooaut0";
         Key key2 = new SecretKeySpec(sharedTokenSecret2.getBytes(),
                 SignatureAlgorithm.HS256.getJcaName());
-
 
         Jws<Claims> claimsJws = Jwts.parserBuilder().setSigningKey(key2).build().parseClaimsJws(jws2);*/
 
         Jws<Claims> claimsJws = Jwts.parserBuilder().setSigningKey(key).build().parseClaimsJws(jws2);
 
-
         JwsHeader header = claimsJws.getHeader();
         Claims body = claimsJws.getBody();
-
-
 
         System.out.println("jwt header:" + header);
         System.out.println("jwt body:" + body);
         System.out.println("jwt body:" + body.getSubject());
-
-
     }
 
 }

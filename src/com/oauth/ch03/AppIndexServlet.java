@@ -20,6 +20,7 @@ import java.util.Map;
 public class AppIndexServlet extends HttpServlet {
 
 
+    //8080:三方软件，8081：授权服务，8081：受保护资源服务 为了演示方便我们将授权服务和受保护资源服务放在同一个服务上面
 
     String oauthUrl = "http://localhost:8081/OauthServlet-ch03?reqType=oauth";
     String redirectUrl = "http://localhost:8080/AppServlet-ch03";
