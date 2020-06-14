@@ -39,7 +39,7 @@ public class OauthServlet extends HttpServlet {
         //模拟第三方软件注册之后的数据库存储
         appMap.put("app_id","APPID_RABBIT");
         appMap.put("app_secret","APPSECRET_RABBIT");
-        appMap.put("redirect_uri","http://localhost:8080/AppServlet-ch03");
+        appMap.put("redirect_uri","http://localhost:8080/AppServlet-ch09");
         appMap.put("scope","today history");
 
     }
@@ -115,7 +115,7 @@ public class OauthServlet extends HttpServlet {
             //GENATE ID TOKEN
             String id_token=genrateIdToken(appId,"XIAOMINGTEST");//模拟用户小明登录
 
-            response.getWriter().write(accessToken+"|"+id_token);
+            response.getWriter().write(accessToken+"&"+id_token);
 
         }
 
@@ -159,6 +159,9 @@ public class OauthServlet extends HttpServlet {
         String scope = request.getParameter("scope");
 
         System.out.println("8081 GET responseType: "+responseType);
+        System.out.println("8081 GET redirect_uri: "+redirectUri);
+        System.out.println("8081 GET app_id: "+appId);
+        System.out.println("8081 GET scope: "+scope);
 
         if(!appMap.get("app_id").equals(appId)){
             return;
@@ -185,7 +188,7 @@ public class OauthServlet extends HttpServlet {
         request.setAttribute("app_id",appId);
 
         //跳转到授权页面
-        request.getRequestDispatcher("/approve.jsp").forward(request,response);
+        request.getRequestDispatcher("/approve-09.jsp").forward(request,response);
 
         //至此颁发授权码code的准备工作完毕
 

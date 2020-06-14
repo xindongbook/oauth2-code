@@ -91,7 +91,11 @@ public class JWTTest {
 
         System.out.println("jwt header:" + header);
         System.out.println("jwt body:" + body);
-        System.out.println("jwt body:" + body.getSubject());
+        System.out.println("jwt sub:" + body.getSubject());
+        System.out.println("jwt aud:" + body.getAudience());
+        System.out.println("jwt iss:" + body.getIssuer());
+        System.out.println("jwt exp:" + body.getExpiration());
+        System.out.println("jwt iat:" + body.getIssuedAt());
     }
 
 }
