@@ -1,4 +1,4 @@
-package com.oauth.ch02;
+package com.oauth.ch06;
 
 import com.my.util.URLParamsUtil;
 

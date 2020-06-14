@@ -13,8 +13,8 @@ import java.util.Map;
 
 /**
  * **
- * 使用此类来模拟第三方软件的首页
- * http://localhost:8080/AppIndexServlet-ch03
+ * 使用此类来模拟【第三方软件的首页】
+ * 浏览器输入 http://localhost:8080/AppIndexServlet-ch03
  */
 @WebServlet("/AppIndexServlet-ch03")
 public class AppIndexServlet extends HttpServlet {

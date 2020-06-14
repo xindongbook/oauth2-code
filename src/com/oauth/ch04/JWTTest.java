@@ -68,7 +68,9 @@ public class JWTTest {
         headerMap.put("alg", "HS256");
 
         Map<String, Object> payloadMap = new HashMap<>();
-        payloadMap.put("sub", "USERTEST");
+        payloadMap.put("iss", "http://localhost:8081/");
+        payloadMap.put("sub", "XIAOMINGTEST");
+        payloadMap.put("aud", "APPID_RABBIT");
         payloadMap.put("exp", 1584105790703L);
         payloadMap.put("iat", 1584105948372L);
 

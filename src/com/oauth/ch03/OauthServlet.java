@@ -13,6 +13,11 @@ import java.util.Map;
 import java.util.Random;
 import java.util.UUID;
 
+/**
+ * **
+ * 使用此类来模拟【授权服务】
+ */
+
 @WebServlet("/OauthServlet-ch03")
 public class OauthServlet extends HttpServlet {
 

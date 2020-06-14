@@ -113,7 +113,7 @@ public class OauthServlet extends HttpServlet {
             tokenScopeMap.put(accessToken,codeScopeMap.get(code));//授权范围与访问令牌绑定
 
             //GENATE ID TOKEN
-            String id_token=genrateIdToken(appId,"XIAOMINGTEST");
+            String id_token=genrateIdToken(appId,"XIAOMINGTEST");//模拟用户小明登录
 
             response.getWriter().write(accessToken+"|"+id_token);
 
@@ -123,7 +123,7 @@ public class OauthServlet extends HttpServlet {
 
 
     /**
-     * genrate id_token
+     * genrate
      * @param appId
      * @param user
      * @return

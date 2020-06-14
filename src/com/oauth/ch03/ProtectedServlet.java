@@ -11,12 +11,13 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+
+/**
+ * **
+ * 使用此类来模拟【受保护资源服务】
+ */
 @WebServlet("/ProtectedServlet-ch03")
 public class ProtectedServlet extends HttpServlet {
-
-
-
-
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

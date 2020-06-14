@@ -11,10 +11,14 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
+
+/**
+ * **
+ * 使用此类来模拟【第三方软件的Server端】
+ *
+ */
 @WebServlet("/AppServlet-ch03")
 public class AppServlet extends HttpServlet {
-
-
 
     String oauthURl="http://localhost:8081/OauthServlet-ch03";
     String protectedURl="http://localhost:8081/ProtectedServlet-ch03";
